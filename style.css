@@ -1,0 +1,296 @@
+/* Zmienne przechowujące potrzebne nam kolory */
+:root {
+  --dark-gray: #3a3335;
+  --greenish-gray: rgba(198, 216, 211, 0.3);
+  --gray: #908e8e;
+  --light-greenish-gray: #c6d8d3;
+  --light-gray: #ede8e9;
+  --white: #fff;
+  --orange: #eb5e55;
+  --orange-hover: #e7463b;
+  --bg-resting: rgba(58, 51, 53, 0.04);
+}
+/* Podstawowy reset domyślnych wartości */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif !important;
+}
+*:focus {
+  outline: none;
+}
+/* Główny kontener */
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 1136px;
+  align-items: center;
+  margin: auto;
+}
+/* Pierwszy element: Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  margin-top: 17px;
+}
+.header__home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  border-radius: 12px;
+  background-color: var(--orange);
+  transition: 0.2s;
+}
+.header__home:hover {
+  background-color: var(--orange-hover);
+}
+.header__home:focus {
+  box-shadow: 0 0 0 3px var(--orange-hover);
+}
+.header__profile {
+  height: 40px;
+  border-radius: 10px;
+  transition: box-shadow 0.2s;
+  overflow: hidden;
+}
+.header__profile:focus {
+  box-shadow: 0 0 0 3px var(--orange-hover);
+}
+.header__profile__image {
+  max-height: 100%;
+}
+
+/* Drugi element: Detale płatności */
+.payment {
+  margin-top: 43px;
+  max-width: 655px;
+  width: 100%;
+  color: var(--dark-gray);
+}
+.payment__header {
+  font-weight: 800;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: -0.0857143px;
+}
+.payment__h3 {
+  font-weight: normal;
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 13px;
+}
+.payment__form {
+  font-weight: bold;
+  font-size: 14px;
+}
+.payment__section {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.payment__section--services {
+  margin-top: 30px;
+}
+.payment__section--booking {
+  margin-top: 20px;
+}
+.payment__item {
+  display: flex;
+  justify-content: space-between;
+  height: 72px;
+  padding: 25px 13px 25px 20px;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  margin: 4px 0;
+  transition: box-shadow 0.2s;
+}
+.payment__item:focus-within {
+  box-shadow: 0 0 0 3px var(--orange-hover);
+}
+.payment__item__price {
+  font-size: 16px;
+}
+.payment__item--select {
+  height: 62px;
+  padding: 0 16px 0 20px;
+  justify-content: flex-start;
+  margin-top: 15px;
+}
+.payment__item__icon {
+  width: 40px;
+}
+.select {
+  font-weight: bold;
+  color: var(--dark-gray);
+  width: 100%;
+  border: none;
+  font-size: 14px;
+  margin-left: 10px;
+  /* Kolor tła potrzebny do mobilnych przeglądarek,
+  inaczej byłby szary. */
+  background-color: var(--white);
+}
+.select:hover {
+  cursor: pointer;
+}
+.payment__item__checkbox {
+  display: flex;
+}
+/* Tworzenie custom check-box'a */
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-clip: content-box;
+  background-color: var(--bg-resting);
+  border-radius: 50%;
+  margin-right: 13px;
+}
+.checkbox:hover {
+  cursor: pointer;
+}
+.checkbox:checked {
+  background-color: white;
+  border: 6px solid var(--light-greenish-gray);
+}
+.payment__label {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  transition: all 0.1s ease;
+  color: var(--gray);
+}
+/* Elementy flex formularza */
+.payment__flex {
+  display: flex;
+  width: 100%;
+}
+.payment__item--flex {
+  position: relative;
+  flex-grow: 1;
+}
+.payment__item--flex:first-of-type {
+  margin-right: 4px;
+}
+.payment__item--flex:last-of-type {
+  margin-left: 4px;
+}
+.payment__input:focus,
+.payment__input:not(:focus):valid {
+  transform: translateY(10px);
+}
+.payment__input:focus ~ .payment__label,
+.payment__input:not(:focus):valid ~ .payment__label {
+  top: 13px;
+  transform: translateY(0);
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+}
+.payment__input {
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+}
+/* Trzeci element: Kroki Płatności */
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 73px 0;
+}
+.steps__button {
+  height: 46px;
+  width: 98px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 10px;
+}
+.steps__button:focus {
+  box-shadow: 0 0 0 3px var(--orange-hover);
+}
+.steps__button--active {
+  background-color: var(--orange);
+  color: var(--white);
+}
+.steps__button--active:hover {
+  background-color: var(--orange-hover);
+}
+.steps__button--resting {
+  background-color: var(--bg-resting);
+  color: var(--gray);
+}
+/* Pasek postępu */
+.progress {
+  max-width: 404px;
+  width: 100%;
+}
+.progress__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.line {
+  max-width: 142px;
+  width: 35%;
+  height: 2px;
+  background-color: var(--greenish-gray);
+}
+.circle {
+  position: relative;
+  width: 9.6px;
+  height: 9.6px;
+  border-radius: 50%;
+  background-color: var(--light-greenish-gray);
+  box-shadow: 0px 0px 0px 7px var(--greenish-gray);
+}
+.circle--active {
+  background-color: var(--white);
+  box-shadow: 0px 0px 0px 7px var(--light-greenish-gray);
+  transition: background-color 0.2s;
+}
+.circle__text {
+  position: absolute;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  color: var(--gray);
+  top: 23px;
+  left: -25px;
+}
+/* Dwie krótkie media queries umożliwiające wygodne przedstawienie efektów w wersji mobilnej. */
+@media (max-width: 1200px) {
+  .container {
+    margin: 0 40px;
+  }
+}
+@media (max-width: 900px) {
+  .steps {
+    flex-flow: column;
+    margin-top: 20px;
+  }
+
+  .steps__button {
+    margin-top: 25px;
+  }
+
+  .progress {
+    width: 80%;
+  }
+  .progress__container {
+    padding: 50px 0;
+  }
+}

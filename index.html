@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/logo.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Additional Services | Veventy</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Pierwszy element: Header -->
+      <header class="header">
+        <a href="#" class="header__home">
+          <img src="./assets/icon.svg" alt="home-icon" />
+        </a>
+
+        <a href="#" class="header__profile">
+          <img
+            class="header__profile__image"
+            src="./assets/profile-picture.png"
+            alt="profile-picture"
+          />
+        </a>
+      </header>
+
+      <!-- Drugi element: Detale Płatności -->
+      <section class="payment">
+        <h1 class="payment__header">Select additional services</h1>
+
+        <form class="payment__form">
+          <!-- Services -->
+          <section class="payment__section payment__section--services">
+            <h3 class="payment__h3">Services</h3>
+            <div class="payment__item">
+              <div class="payment__item__checkbox">
+                <input type="checkbox" class="checkbox" />
+                Massage and Spa
+              </div>
+              <span class="payment__item__price">+$50.00</span>
+            </div>
+
+            <div class="payment__item">
+              <div class="payment__item__checkbox">
+                <input type="checkbox" class="checkbox" />
+                Airport pickup
+              </div>
+              <span class="payment__item__price">+$20.00</span>
+            </div>
+
+            <div class="payment__item">
+              <div class="payment__item__checkbox">
+                <input type="checkbox" class="checkbox" />
+                Breakfast
+              </div>
+              <span class="payment__item__price">+$15.00</span>
+            </div>
+          </section>
+
+          <!-- Payment for booking -->
+          <section class="payment__section payment__section--booking">
+            <h3 class="payment__h3">Payment for booking</h3>
+
+            <!-- Docelowo cały ten element powinien być "selectem", nie "divem", natomiast by używać grafik w elemencie "select", skorzystać musimy z Javascript'a, którego według zasad użyć nie mogłem - dlatego też, grafika jest wstawiona obok selecta. Podobnie jest również z ostylowaniem naszego selecta - by to zrobić w poprawny sposób, powinniśmy skorzystać z Javascript'a -->
+
+            <div class="payment__item payment__item--select">
+              <img
+                class="payment__item__icon"
+                src="assets/visa.svg"
+                alt="visa-card-icon"
+              />
+              <select class="select">
+                <option>Credit or debit Visa card</option>
+                <option>Testowa opcja druga</option>
+              </select>
+            </div>
+
+            <div class="payment__item payment__item--flex">
+              <input
+                class="payment__input"
+                type="text"
+                autocomplete="cc-number"
+                required
+              />
+              <label class="payment__label">Card Number</label>
+            </div>
+
+            <div class="payment__flex">
+              <div class="payment__item payment__item--flex">
+                <input
+                  class="payment__input"
+                  type="text"
+                  autocomplete="cc-exp"
+                  required
+                />
+                <label class="payment__label">Expiration</label>
+              </div>
+
+              <div class="payment__item payment__item--flex">
+                <input
+                  class="payment__input"
+                  type="text"
+                  autocomplete="cc-csc"
+                  required
+                />
+                <label class="payment__label">CVV</label>
+              </div>
+            </div>
+          </section>
+        </form>
+      </section>
+
+      <!-- Trzeci element: Kroki Płatności -->
+      <div class="steps">
+        <!-- Return button -->
+        <button class="steps__button steps__button--resting">Back</button>
+
+        <!-- Pasek postępu -->
+        <div class="progress">
+          <div class="progress__container">
+            <div class="circle circle--active">
+              <p class="circle__text">Booking</p>
+            </div>
+            <div class="line"></div>
+            <div class="circle circle--active">
+              <p class="circle__text">Checkout</p>
+            </div>
+            <div class="line"></div>
+            <div class="circle">
+              <p class="circle__text">Confirm</p>
+            </div>
+          </div>
+        </div>
+        <!-- Forward button -->
+        <button class="steps__button steps__button--active">Next</button>
+      </div>
+    </div>
+  </body>
+</html>
