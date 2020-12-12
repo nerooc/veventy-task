@@ -8,4 +8,4 @@
 
 Simple Figma mockup implemented with pure HTML &amp; CSS layout
 
-![alt text]()
+![alt text](https://github.com/nerooc/veventy-task/blob/main/assets/preview.png)
